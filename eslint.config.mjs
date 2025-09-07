@@ -19,7 +19,10 @@ const eslintConfig = [
             "out/**",
             "build/**",
             "next-env.d.ts"
-        ],
+        ]
+    },
+    {
+        files: ["src/**/*.{js,jsx,ts,tsx}"],
         rules: {
             ...rules, // отключает правила, конфликтующие с prettier
             "no-await-in-loop": "error", // разрешает await внутри циклов
