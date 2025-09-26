@@ -1,9 +1,10 @@
-import React from "react";
+"use client";
 
-import { NextPageButton, LinkButton } from "src/shareds/Ui-Kit/buttons";
-import GitHubSvg from "src/shareds/SVG/code";
-import { Title } from "src/shareds/Ui-Kit/title";
+import React from "react";
 import styled from "styled-components";
+import { NextPageButton, LinkButton } from "src/shareds/Ui-Kit/buttons";
+import CodeSVG from "src/shareds/SVG/code";
+import { Title } from "src/shareds/Ui-Kit/title";
 
 const WelcomePage: React.FC = () => {
     return (
@@ -17,7 +18,7 @@ const WelcomePage: React.FC = () => {
         >
             <NextPageButton label='dabeiteec.com' />
             <LinkButton>
-                <GitHubSvg width={75} height={75} />
+                <CodeSVG width={75} height={75} />
             </LinkButton>
             <Title text='Welcome' isGradient={true} />
         </div>

@@ -1,5 +1,6 @@
 import * as React from "react";
-const GitHubSvg = (props: any) => (
+
+const CodeSVG = (props: any) => (
     <svg
         width={77}
         height={75}
@@ -47,4 +48,5 @@ const GitHubSvg = (props: any) => (
         </defs>
     </svg>
 );
-export default GitHubSvg;
+
+export default CodeSVG;
