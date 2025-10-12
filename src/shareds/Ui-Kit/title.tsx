@@ -13,6 +13,7 @@ export const Title: React.FC<TitleProps> = ({ text, isGradient }) => {
 };
 
 const CustomTitle = styled.h1<{ $isGradient?: boolean }>`
+    margin: 0;
     font-size: 96px;
     font-weight: 700;
     color: ${({ $isGradient }) => ($isGradient ? `transparent` : `${white}`)};

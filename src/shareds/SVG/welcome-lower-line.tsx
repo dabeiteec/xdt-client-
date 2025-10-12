@@ -3,17 +3,17 @@ import * as React from "react";
 const LowerLine = (props: any) => (
     <svg
         width={678}
-        height={794}
-        viewBox='0 0 678 794'
+        height={774}
+        viewBox='0 0 1000  794'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         {...props}
     >
-        <g filter='url(#filter0_f_42_80)'>
+        <g filter='url(#filter0_f_42_80)' transform='translate(700, 0)'>
             <path
                 d='M200.03 827.002C200.03 827.002 291.672 766.829 287.173 603.803C282.674 440.777 456.689 433.43 611.925 478.533C767.161 523.635 849.378 501.039 921.878 444.789C994.377 388.539 970.851 200.056 970.851 200.056'
                 stroke='url(#paint0_linear_42_80)'
-                strokeWidth={71}
+                strokeWidth={40}
                 strokeLinecap='round'
             />
         </g>

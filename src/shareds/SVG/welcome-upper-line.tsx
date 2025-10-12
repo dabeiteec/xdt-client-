@@ -2,27 +2,28 @@ import * as React from "react";
 
 const UpperLine = (props: any) => (
     <svg
-        width={1920}
-        height={551}
-        viewBox='0 0 1920 551'
+        width='2200' // 👈 увеличиваем физическую ширину SVG
+        height='501'
+        viewBox='0 0 1920 551' // 👈 оставляем исходный viewBox
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         {...props}
     >
-        <g filter='url(#filter0_f_41_13)'>
+        <g filter='url(#filter0_f_41_13)' transform='translate(-40, -50)'>
+            {/* 👆 сдвигаем чуть влево, чтобы вылезла за экран */}
             <path
                 d='M1989.47 243.466C1989.47 243.466 1774 249.081 1542.36 133.562C1310.73 18.0419 1057.59 102.937 907.151 214.537C756.712 326.136 609.204 352.967 426.121 351.407C243.038 349.846 0.762781 206.811 0.762781 206.811'
                 stroke='url(#paint0_linear_41_13)'
-                strokeWidth={71}
+                strokeWidth={51}
                 strokeLinecap='round'
             />
         </g>
         <defs>
             <filter
                 id='filter0_f_41_13'
-                x={-198.643}
+                x={-300}
                 y={-121.053}
-                width={2387.51}
+                width={2500}
                 height={671.923}
                 filterUnits='userSpaceOnUse'
                 colorInterpolationFilters='sRGB'
@@ -53,4 +54,5 @@ const UpperLine = (props: any) => (
         </defs>
     </svg>
 );
+
 export default UpperLine;

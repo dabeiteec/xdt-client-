@@ -55,7 +55,7 @@ const InnerGlow = styled.div<{ $isLink?: boolean }>`
         inset 3px 0 7px ${yellowGradient},
         inset 0 -3px 7px ${yellowGradient},
         inset 0 3px 7px ${greenGradient};
-    filter: blur(2px);
+    filter: blur(1px);
     background: transparent;
     z-index: -1;
     pointer-events: none;
