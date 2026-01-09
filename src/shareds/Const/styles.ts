@@ -1,4 +1,4 @@
-type ScreenParams = {
+export type ScreenParams = {
     titleFontSize: number;
     titleWeight: number;
     linkButtonSize: number;
@@ -7,10 +7,16 @@ type ScreenParams = {
     continueButtonTextSize: number;
     continueButtonTextWeight: number;
     continueButtonCorner: number;
-    dropGlowButton: number;
-    innerGlow: number;
+    dropGlowButton?: number;
+    innerGlow?: number;
     continueButtonWidth: number;
     continueButtonHeight: number;
+
+    /** размеры линий */
+    upperLineWidth?: number;
+    upperLineHeight?: number;
+    lowerLineWidth?: number;
+    lowerLineHeight?: number;
 };
 
 interface WelcomePageParams {
@@ -66,7 +72,24 @@ export const WelcomePageConfig: WelcomePageParams = {
         // 1280 x 800 (Standard small laptop/Netbook)
         1280: {},
         // 1366 x 768 (Most common laptop resolution)
-        1366: {},
+
+        1366: {
+            titleFontSize: 72,
+            titleWeight: 700,
+            linkButtonSize: 70,
+            linkButtonCorner: 80,
+            linkIconSize: 55,
+            continueButtonTextSize: 28,
+            continueButtonTextWeight: 400,
+            continueButtonCorner: 10,
+            continueButtonWidth: 300,
+            continueButtonHeight: 65,
+            upperLineWidth: 1366,
+            upperLineHeight: 120,
+            lowerLineWidth: 1366,
+            lowerLineHeight: 100
+        },
+
         // 1440 x 900 (MacBook Air 13" historical)
         1440: {},
         // 1536 x 864 (Common modern laptop)

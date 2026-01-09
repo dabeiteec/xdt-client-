@@ -10,6 +10,7 @@ import UpperLine from "src/shareds/SVG/welcome-upper-line";
 import LowerLine from "src/shareds/SVG/welcome-lower-line";
 import UserSVG from "src/shareds/SVG/user";
 import GitHubSVG from "src/shareds/SVG/github";
+import useScreenParams from "src/shareds/hooks/useScreenParams";
 
 const WelcomePage: React.FC = () => {
     const title = ["Welcome", "to", "my"];
@@ -28,7 +29,8 @@ const WelcomePage: React.FC = () => {
             href: "https://example.com/code"
         }
     ];
-
+    const { screenWidth, screenHeight } = useScreenParams();
+    console.log("Is it PARAMS", screenWidth, screenHeight);
     return (
         <MainContainer>
             <StyledUpperLine />
@@ -176,6 +178,17 @@ const MainContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    /* --- Адаптив для ноутбуков 1366x780 --- */
+    @media screen and (max-width: 1366px) and (max-height: 780px) {
+        margin-top: 130px;
+        scale: 0.9;
+    }
+
+    @media screen and (max-width: 1280px) {
+        margin-top: 150px;
+        scale: 0.85;
+    }
 `;
 
 const StyledUpperLine = styled(UpperLine)`
@@ -188,6 +201,13 @@ const StyledUpperLine = styled(UpperLine)`
     height: auto;
 `;
 
+const StyledLowerLine = styled(LowerLine)`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+`;
+
 const StyledTitle = styled(Title)`
     margin: 0;
     display: inline-block;
@@ -198,25 +218,32 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
-`;
 
-const StyledLowerLine = styled(LowerLine)`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    @media screen and (max-width: 1366px) and (max-height: 780px) {
+        margin-bottom: 30px;
+    }
 `;
 
 const LinksRow = styled.div`
     display: flex;
     gap: 40px;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 1366px) {
+        gap: 25px;
+        margin-bottom: 20px;
+    }
 `;
 
 const TitleRow = styled.div`
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1366px) {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
 `;
 
 export default WelcomePage;
