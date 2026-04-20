@@ -1,5 +1,5 @@
-import { LowerLine } from 'src/shareds/SVG/welcome-lower-line';
-import { LowerLine } from 'src/shareds/SVG/welcome-lower-line';
+import { LowerLine } from 'src/shareds/SVG/backgroundLines/welcome/welcome-lower-line';
+import { LowerLine } from 'src/shareds/SVG/backgroundLines/welcome/welcome-lower-line';
 import { useMemo } from "react";
 import { WelcomePageConfig } from "../Const/styles";
 

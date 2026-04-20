@@ -34,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+коп статичный код тоже от кода стрелочка вправо доходит до шестеренок и заствляет паралельно из за компа выкатывается бургер и когда первая стрелочка выдвигается падает стрелочка от облака на телефонт и возвращается обратнно(эту анимацию зацикливаем падают стрелочки в определенный временной промежуток) тэг после того как закрутились шестеренки дергается а влево вправо а странички выдвигаются вверх по очереди
+
+в хоумпейдже сделать

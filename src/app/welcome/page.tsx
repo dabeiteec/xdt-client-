@@ -4,33 +4,44 @@ import React from "react";
 import styled from "styled-components";
 import { motion, easeOut } from "framer-motion";
 import { NextPageButton, LinkButton } from "src/shareds/Ui-Kit/buttons";
-import CodeSVG from "src/shareds/SVG/code";
+import CodeSVG from "src/shareds/SVG/global/code";
 import { Title } from "src/shareds/Ui-Kit/title";
-import UpperLine from "src/shareds/SVG/welcome-upper-line";
-import LowerLine from "src/shareds/SVG/welcome-lower-line";
+import UpperLine from "src/shareds/SVG/backgroundLines/welcome/welcome-upper-line";
+import LowerLine from "src/shareds/SVG/backgroundLines/welcome/welcome-lower-line";
 import UserSVG from "src/shareds/SVG/user";
-import GitHubSVG from "src/shareds/SVG/github";
+import GitHubSVG from "src/shareds/SVG/global/github";
 import useScreenParams from "src/shareds/hooks/useScreenParams";
+import { useRouter } from "next/navigation"; // ДОБАВЬТЕ ЭТОТ ИМПОРТ!
 
 const WelcomePage: React.FC = () => {
+    const router = useRouter(); // ДОБАВЬТЕ ЭТОТ ХУК
+
     const title = ["Welcome", "to", "my"];
     const gradientTitle = ["Portfolio", "Website"];
+
     const links = [
         {
             icon: <GitHubSVG width={75} height={75} />,
-            href: "https://github.com"
+            href: "https://github.com" // Внешняя ссылка - оставляем как есть
         },
         {
             icon: <UserSVG width={75} height={75} />,
-            href: "https://example.com/user"
+            onClick: () => router.push("/home") // НАВИГАЦИЯ НА /home
         },
         {
             icon: <CodeSVG width={75} height={75} />,
-            href: "https://example.com/code"
+            onClick: () => router.push("/projects") // НАВИГАЦИЯ НА /projects
         }
     ];
+
     const { screenWidth, screenHeight } = useScreenParams();
+
+    const handleButtonClick = () => {
+        router.push("/home"); // НАВИГАЦИЯ НА /home при клике на кнопку
+    };
+
     console.log("Is it PARAMS", screenWidth, screenHeight);
+
     return (
         <MainContainer>
             <StyledUpperLine />
@@ -44,9 +55,12 @@ const WelcomePage: React.FC = () => {
                 {/* === 1. Линки (поочерёдно сверху вниз) === */}
                 <LinksRow as={motion.div} variants={linksContainer}>
                     {links.map((link, idx) => (
-                        <motion.div key={idx} variants={fadeFromTop}>
+                        <motion.div key={idx} variants={fadedLink}>
                             <LinkButton
-                                onClick={() => window.open(link.href, "_blank")}
+                                onClick={
+                                    link.onClick ||
+                                    (() => window.open(link.href, "_blank"))
+                                }
                             >
                                 {link.icon}
                             </LinkButton>
@@ -77,7 +91,10 @@ const WelcomePage: React.FC = () => {
 
                 {/* === 4. Кнопка (появляется последней, как есть) === */}
                 <motion.div variants={fadeInButton}>
-                    <NextPageButton label='dabeiteec.com' />
+                    <NextPageButton
+                        label='dabeiteec.com'
+                        onClick={handleButtonClick} // ДОБАВЬТЕ ОБРАБОТЧИК
+                    />
                 </motion.div>
             </MainContent>
 
@@ -123,7 +140,7 @@ const portfolioContainer = {
 };
 
 // Анимации движений
-const fadeFromTop = {
+const fadedLink = {
     hidden: { opacity: 0, y: -40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } }
 };
